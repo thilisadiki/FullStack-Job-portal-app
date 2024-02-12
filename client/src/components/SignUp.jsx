@@ -27,7 +27,29 @@ const SignUp = ({ open, setOpen }) => {
 
   const closeModal = () => setOpen(false);
 
-  const onSubmit = () => {};
+  const onSubmit = async(data) => {
+    let URL = null; 
+
+    if (isRegister){
+      if (accountType === "seeker") {
+        URL = "auth/register";
+      } else URL = "companies/register";
+    } else {
+      if (accountType === "seeker") {
+        URL = "auth/login";
+      } else {
+        URL = "companies/login";
+      }
+    }
+
+    try {
+      const res = await
+
+    } catch (error){
+      console.log(error)
+    }
+    
+  };
 
   return (
     <>
